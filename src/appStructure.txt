@@ -1,0 +1,17 @@
+● src
++---● app
+|   +--● Agendas
+|   |  |--Agendas.component.ts|.html|.css
+|   |  +--● Agenda
+|   |  |  |--Agenda.component.ts|.html|.css
+|   |  |
+|   |  +--● Agenda-list
+|   |  |  |--Agenda-list.component.ts|.html|.css
+|   |  |
+|   |  +--● shared
+|   |     |--Agenda.service.ts
+|   |     |--Agenda.model.ts
+|   |
+|   |--app.module.ts
+|
+|--index.html (cdn path for bootstrap)

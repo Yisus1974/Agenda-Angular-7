@@ -1,0 +1,118 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="AgendaId" [value]="service.formData.AgendaId">
+
+    <div class="row">
+        <div class="col-md-6">
+<div class="form-group">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+                <i class="fas fa-user-circle" [class.green-icon]="Nombre.valid" [class.red-icon]="Nombre.invalid && Nombre.touched"></i>
+            </div>
+        </div>
+        <input name="Nombre" #Nombre="ngModel" [(ngModel)]="service.formData.Nombre" class="form-control" placeholder="Escriba el Nombre" required maxlength="80" minlength="5">
+    </div>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="far fa-calendar-alt" [class.green-icon]="FechNac.valid" [class.red-icon]="FechNac.invalid && FechNac.touched"></i>
+                </div>
+            </div>
+            <input type="date" name="FechNac" #FechNac="ngModel" [(ngModel)]="service.formData.FechNac" class="form-control" placeholder="Escriba la fecha de Nacimiento dd/mm/yyyy" required maxlength="10">
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="row">
+        <div class="col-md-6">
+    <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fas fa-phone-square-alt" [class.green-icon]="Telefono.valid" [class.red-icon]="Telefono.invalid && Telefono.touched"></i>
+                    </div>
+                </div>
+                <input name="Telefono" #Telefono="ngModel" [(ngModel)]="service.formData.Telefono" class="form-control" placeholder="Escriba el Telefono de Casa" required maxlength="10">
+            </div>
+        </div>
+        </div>
+
+                <div class="col-md-6">        
+        <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text bg-white">
+                            <i class="fas fa-mobile-alt" [class.green-icon]="Celular.valid" [class.red-icon]="Celular.invalid && Celular.touched"></i>
+                        </div>
+                    </div>
+                    <input name="Celular" #Celular="ngModel" [(ngModel)]="service.formData.Celular" class="form-control" placeholder="Escriba el telefono móvil" required maxlength="10">
+                </div>
+            </div>
+                </div>
+</div>
+
+<div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fas fa-at" [class.green-icon]="email.valid" [class.red-icon]="email.invalid && email.touched"></i>
+                            </div>
+                        </div>
+                        <input name="email" #email="ngModel" [(ngModel)]="service.formData.email" class="form-control" placeholder="Escriba el correo" required maxlength="50">
+                    </div>
+                </div>
+        </div>
+
+                <div class="col-md-6">        
+                <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-white">
+                                    <i class="fas fa-user-circle" [class.green-icon]="Direccion.valid" [class.red-icon]="Direccion.invalid && Direccion.touched"></i>
+                                </div>
+                            </div>
+                            <input name="Direccion" #Direccion="ngModel" [(ngModel)]="service.formData.Direccion" class="form-control" placeholder="Escriba la Dirección" required maxlength="500">
+                        </div>
+                    </div>
+                </div>
+</div>
+
+<div class="row">
+        <div class="col-md-6">
+                    <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white">
+                                        <i class="far fa-check-circle" [class.green-icon]="Estatus.valid" [class.red-icon]="Estatus.invalid && Estatus.touched"></i>
+                                    </div>
+                                </div>
+                                <select name="Estatus" #Estatus="ngModel" [(ngModel)]="service.formData.Estatus" class="form-control">
+                                    <option value=true selected>Activo</option>
+                                    <option value=false>Inactivo</option>
+                                </select>
+                            </div>
+                        </div>
+        </div>
+
+                <div class="col-md-6">&nbsp;</div>
+</div>
+
+        
+<div class="row">
+        <div class="col-md-4">&nbsp;</div>
+        <div class="col-md-4">
+                        <div class="form-group">
+                            <button class="btn btn-success btn-lg btn-block" type="submit"><i class="far fa-save"></i> Guardar</button>
+                        </div>
+        </div>
+        <div class="col-md-4">&nbsp;</div>
+</div>
+</form>

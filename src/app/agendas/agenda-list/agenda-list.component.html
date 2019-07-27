@@ -1,0 +1,22 @@
+<table class="table table-hover" style="font-size: 14px;">
+    <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Fecha de Nacimiento</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Móvil</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Estatus</th>
+        <th scope="col">Acción</th>
+    </tr>
+    <tr *ngFor="let ag of service.list">
+        <td (click)="populateForm(ag)">{{ag.Nombre}}</td>
+        <td (click)="populateForm(ag)">{{ag.FechNac | date : 'dd/MM/yyyy'}}</td>
+        <td (click)="populateForm(ag)">{{ag.Telefono}}</td>
+        <td (click)="populateForm(ag)">{{ag.Celular}}</td>
+        <td (click)="populateForm(ag)">{{ag.email}}</td>
+        <td (click)="populateForm(ag)">{{ag.Direccion}}</td>
+        <td (click)="populateForm(ag)">{{ag.Estatus  ? 'Activo' : 'Inactivo' }}</td>
+        <td><i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(ag.AgendaId)"></i></td>
+    </tr>
+</table>
